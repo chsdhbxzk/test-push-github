@@ -1,0 +1,136 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  padding: 15px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header .logo {
+  font-family: "Athiti", sans-serif;
+  font-size: 32px;
+  font-size: 60px;
+  font-weight: 400; /* Regular */
+  text-transform: lowercase;
+}
+
+.menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; /* Regular */
+}
+
+.menu a.active {
+  font-weight: 700;
+}
+
+.icons i {
+  font-size: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.icons .fa-magnifying-glass {
+  color: #f8e0d9;
+}
+
+.icons .fa-cart-shopping {
+  color: #ffffff; /* màu icon trắng */
+  background-color: #ee4949; /* nền vuông đỏ */
+  padding: 8px; /* khoảng cách icon với viền */
+  border-radius: 4px; /* góc bo nhẹ, nếu muốn vuông hoàn toàn bỏ border-radius */
+  font-size: 20px;
+}
+
+
+
+  /* FRAME 2 */
+.frame2 {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 150px;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.frame2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* lớp phủ tối */
+.frame2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* nội dung */
+.frame2-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*padding: 0 80px;*/
+  
+  z-index: 5;
+}
+
+/* tiêu đề */
+.frame2-content h2 {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  margin: 0 auto;      /* ép chữ ra giữa */
+  text-align: center;
+}
+
+/* dropdown */
+.frame2-filter select {
+  font-family: "Roboto", sans-serif;
+  width: 230px;
+ 
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.frame2-filter select:focus {
+  color: #000; /* chữ đen khi click/focus */
+}

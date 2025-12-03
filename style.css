@@ -1,0 +1,927 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  padding: 15px 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header .logo {
+  font-family: "Athiti", sans-serif;
+  font-size: 32px;
+  font-size: 60px;
+  font-weight: 400; /* Regular */
+  text-transform: lowercase;
+}
+
+.menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; /* Regular */
+}
+
+.menu a.active {
+  font-weight: 700;
+}
+
+.icons i {
+  font-size: 30px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.icons .fa-magnifying-glass {
+  color: #f8e0d9;
+}
+
+.icons .fa-cart-shopping {
+  color: #ffffff; /* màu icon trắng */
+  background-color: #ee4949; /* nền vuông đỏ */
+  padding: 8px; /* khoảng cách icon với viền */
+  border-radius: 4px; /* góc bo nhẹ, nếu muốn vuông hoàn toàn bỏ border-radius */
+  font-size: 20px;
+}
+
+/* SLIDER */
+.slider {
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.slides .slide {
+  position: relative; /* để đặt chữ tuyệt đối */
+}
+
+.slide-text {
+  position: absolute;
+  transform: translateX(-50%);
+  font-family: "Lore", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0; /* ẩn mặc định */
+  transition: opacity 0.5s;
+}
+
+.slide img.active + .slide-text {
+  opacity: 1;
+}
+
+.sli2 {
+  top: 230px;
+  left: 320px;
+  font-size: 40px;
+}
+
+.sli3 {
+  font-size: 100px;
+  left: 1000px;
+  top: 400px;
+  white-space: nowrap;
+}
+
+/* chỉ hiện chữ khi slide active */
+.slide img.active + .slide-text {
+  opacity: 1;
+}
+
+.slides img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  display: none;
+  object-position: center;
+}
+
+.slides img.active {
+  display: block;
+}
+
+/*.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #fff;
+}*/
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px; /* icon nhỏ hơn */
+  border: 2px solid #fff; /* viền tròn */
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  width: 40px; /* chiều rộng */
+  height: 40px; /* chiều cao = width để tròn */
+  border-radius: 50%; /* chắc chắn hình tròn */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  padding: 0; /* bỏ padding để không kéo dài */
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #ee4949;
+  border-color: #ee4949; /* viền cùng màu nền */
+  color: #fff; /* icon trắng vẫn giữ */
+}
+
+.prev {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 12px; /* cách đáy ảnh 12px */
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 5px;
+  background: #ccc;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}
+
+.frame3 {
+  width: 100%;
+  height: 300px;
+
+  /*padding: 30px 20px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fr3 {
+  width: 80%;
+  height: 70%;
+  border-radius: 30px 0px;
+  background: #f5d7d7;
+  display: flex;
+  justify-content: space-between; /* GIÃN ĐỀU CÁC CỤM */
+
+  align-items: center; /* canh giữa theo chiều dọc */
+}
+.frame3 span {
+  font-family: "Athiti", sans-serif;
+  font-size: 100px;
+  color: #2d2829;
+  letter-spacing: 3px;
+}
+
+/* FRAME4 */
+.frame4 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.frame4-text {
+  width: 50%;
+  padding-left: 150px;
+  padding-right: 40px;
+}
+
+.frame4-text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.frame4-text h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 25px;
+  font-family: "Roboto", sans-serif;
+}
+
+.frame4-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 25px;
+}
+
+.read-more {
+  font-size: 16px;
+  color: #ee5261;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+}
+
+.read-more:hover {
+  color: #000;
+}
+
+.frame4-img {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding-right: 150px;
+  margin-bottom: 50px;
+}
+
+.frame4-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FRAME 5 */
+.frame5 {
+  width: 100%;
+  padding-left: 150px;
+  padding-right: 150px;
+  background: #f6dcd9;
+  height: 900px;
+}
+
+.frame5-title {
+  padding-top: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+/* GRID */
+.frame5-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 130px 35px;
+  justify-items: center;
+}
+
+/* CARD */
+.frame5-card {
+  width: 100%;
+  width: 260px;
+  height: 260px;
+}
+
+/* IMAGE BOX */
+.frame5-img-box {
+  width: 260px;
+  height: 260px;
+  background: #fff;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.frame5-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ảnh fill đầy div */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* Hover */
+.frame5-img-hover {
+  opacity: 0;
+}
+
+.frame5-card:hover .frame5-img-default {
+  opacity: 0;
+}
+
+.frame5-card:hover .frame5-img-hover {
+  opacity: 1;
+}
+
+/* TAG */
+.frame5-tag {
+  background: #ee4949;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+/* NAME */
+.frame5-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-top: 12px;
+
+  color: #ee494e;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.frame5-name:hover {
+  color: #000; /* đổi sang đen khi hover */
+  cursor: pointer; /* con trỏ chuột biến thành tay */
+  transition: color 0.3s ease; /* chuyển màu mượt hơn */
+}
+
+/* PRICE */
+.frame5-price {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-top: 4px;
+  color: #000;
+}
+
+/* FRAME 6*/
+.frame6 {
+  width: 100%;
+  padding: 50px 150px;
+}
+
+.frame6-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+/* GRID */
+.frame6-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 260px); /* mỗi card 260px */
+  gap: 40px; /* khoảng cách 35-40px như yêu cầu */
+  justify-content: center; /* canh giữa grid */
+}
+
+/* CARD */
+.frame6-card {
+  width: 260px;
+}
+
+/* IMAGE BOX */
+.frame6-img-box {
+  width: 260px;
+  height: 260px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.frame6-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* hoặc object-fit: none nếu muốn crop */
+}
+
+/* TÊN SẢN PHẨM */
+.frame6-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-top: 12px;
+  color: #ee494e;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.frame6-name:hover {
+  color: #000; /* hover đổi màu đen */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* FRAME 7 */
+.frame7 {
+  height: 600px;
+  width: 100%;
+  background: #f6dcd9;
+  text-align: center;
+  padding: 50px 150px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+/* TITLE */
+.frame7-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* XEM TẤT CẢ */
+.frame7-viewall {
+  display: inline-block;
+  margin-bottom: 50px; /* thêm khoảng cách để giống hình */
+  color: #e05863;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.frame7-viewall i {
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.frame7-viewall:hover {
+  color: #000; /* chữ chuyển thành đen */
+}
+
+.frame7-viewall:hover i {
+  color: #000; /* icon chuyển thành đen theo */
+}
+
+/* GRID */
+.frame7-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  justify-items: center;
+  z-index: 1;
+}
+
+/* CARD */
+.frame7-card {
+  width: 260px;
+}
+
+/* IMG */
+.frame7-img {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+}
+
+.frame7-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* NAME */
+.frame7-name {
+  font-family: "Roboto", sans-serif;
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Overlay chung */
+.frame7-left-overlay,
+.frame7-right-overlay {
+  position: absolute;
+  top: 150px; /* chỉnh tùy ý cho trùng hình */
+  width: 30px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.5); /* trắng, 50% */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: auto; /* không cản chuột */
+  z-index: 10;
+}
+
+/* Bên trái (trước ảnh 1) */
+.frame7-left-overlay {
+  left: 150px; /* chỉnh theo padding parent */
+}
+
+/* Bên phải (sau ảnh 4) */
+.frame7-right-overlay {
+  right: 150px;
+}
+
+.frame7-left-overlay:hover,
+.frame7-right-overlay:hover {
+  background: #fff; /* trắng 100% */
+}
+
+/* Hiện overlay khi hover vào GRID */
+/*.frame7-grid:hover ~ .frame7-left-overlay,
+.frame7-grid:hover ~ .frame7-right-overlay {
+  opacity: 1;
+  pointer-events: auto; 
+}*/
+
+.frame7:hover .frame7-left-overlay,
+.frame7:hover .frame7-right-overlay,
+.frame7-left-overlay:hover,
+.frame7-right-overlay:hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Style chung cho 2 icon */
+.frame7-left-overlay i,
+.frame7-right-overlay i {
+  font-size: 28px; /* icon to nổi bật */
+  color: #000; /* màu đen */
+  opacity: 0.7;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* căn giữa chuẩn */
+}
+
+/* Hover vào thanh → icon rõ hơn */
+.frame7-left-overlay:hover i,
+.frame7-right-overlay:hover i {
+  color: #ee494e; /* đỏ */
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+
+<!-- FRAME 8 -- > 
+.frame8 {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.frame8 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* xóa khoảng trắng mặc định inline-image */
+}
+
+/*FRAME9*/
+
+.frame9 {
+  width: 100%;
+  height: 700px;
+  padding: 60px 150px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eee;
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.frame9-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  
+}
+
+.frame9-viewall {
+  font-family: "Roboto", sans-serif;
+  color: #ee494e;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 40px;
+  
+}
+
+.frame9-viewall i {
+  font-size: 12px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+  
+}
+
+/* Hover icon trượt nhẹ */
+.frame9-viewall:hover i {
+  transform: translateX(4px);
+}
+
+.frame9-viewall:hover {
+  color: black;
+}
+
+/* GRID */
+.frame9-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  
+}
+
+
+
+/* CARD */
+.frame9-card {
+  background: #fff;
+  text-align: left;
+   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 350px; 
+  overflow: hidden;
+  transition: 0.35s ease;
+  box-shadow: inset 0 0 10px 1px #E8E8E8;
+  border-radius: 16px;
+  
+}
+
+.frame9-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+.frame9-card img {
+  border-radius: 8px;
+  height: 75%;
+  transition: 0.35s ease;
+  object-fit: cover;
+}
+
+/*.frame9-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}*/
+
+.frame9-card:hover img {
+  height: 60%;
+}
+
+.frame9-card h3,
+.frame9-card p {
+  padding: 0 15px;
+}
+
+.frame9-card h3 {
+  font-family: "Roboto", sans-serif;
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.frame9-card p {
+  font-family: "Roboto", sans-serif;
+  margin-top: 6px;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  z-index: 10;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-left .arrow-left {
+  left: 10px;
+}
+
+/* icon > bên phải card 3 */
+.card-right .arrow-right {
+  right: 10px;
+}
+
+/* Khi hover bất kỳ card -> hiện icon trái & phải */
+.frame9-grid:hover .arrow {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.arrow i {
+  transition: color 0.25s ease;
+}
+
+/* Hover icon đổi sang màu đỏ EE494E */
+.arrow:hover i {
+  color: #EE494E;
+}
+
+/*Frame10*/
+.footer {
+  background: #F6DCD9;
+  padding: 0 150px 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.footer h3 {
+  font-family: "Roboto", sans-serif;
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-bottom: 50px ;
+}
+
+.footer-left {
+  width: 32%;
+}
+
+.logo {
+  font-family: "Athiti", sans-serif;
+  font-size: 100px;
+  
+  font-weight: 100;
+  
+}
+
+.desc {
+  margin-bottom: 10px;
+}
+
+.footer-mid p,
+.footer-left p {
+  margin: 4px 0px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+ 
+}
+
+.footer-right input {
+  
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.footer-right button {
+  padding: 8px 12px;
+  border: none;
+  background: #ee7570;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subscribe {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  position: relative; 
+  width: 300px;
+  
+}
+
+.subscribe input {
+  width: 100%;
+  padding: 10px 110px 10px 12px; 
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.subscribe button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 20px;
+  border: none;
+  background: #ee7570;
+  color: white;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.payment-img {
+  width: 280px;  
+  
+  border-radius:5px;
+}
+
+
+.footer-mid p {
+  margin: 4px 0;
+  cursor: pointer;
+  position: relative;
+  width: max-content;
+  padding-bottom: 3px;
+   line-height: 40px;
+}
+
+/* Gạch chân cho tất cả p TRỪ p cuối cùng */
+.footer-mid p:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: 1px;
+  background: #f5f5f5;
+  opacity: 0.7;
+}
+
+.subscribe input:focus {
+  outline: none;
+  border-color: #dcdcdc;
+  box-shadow: 
+    0 0 6px rgba(0, 0, 0, 0.12),   /* bóng mờ */
+    0 4px 8px rgba(0, 0, 0, 0.08); /* drop shadow mềm bên dưới */
+}
+
+.subscribe input::placeholder {
+  font-weight: 300;   /* placeholder mỏng */
+}
+
+.error-text {
+  font-family: "Roboto", sans-serif;
+  color: #d9534f; /* chữ đỏ */
+  background: #f7eaea; /* nền đỏ nhạt */
+  padding: 5px 10px;
+  border: 2px solid #d9534f; /* viền đỏ */
+  border-radius: 8px;
+  margin-top: 10px; /* cách input 10px */
+  width: fit-content; /* vừa với chữ */
+  display: none; /* ẩn mặc định */
+  font-size: 16px;
+}
+
+.general-error {
+  margin-top: 20px;
+  color: #333;
+  background: #fff7e6;
+  padding: 12px 15px;
+  border: 2px solid #f4b03e;
+  border-radius: 8px;
+  display: none;
+}
+
+.success-text {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  background: #F6DCD9;
+  padding: 8px 5px;
+  border: 2px solid #70c174;
+  border-radius: 8px;
+  margin-top: 50px;
+  display: none; /* ẩn mặc định */
+  font-size: 18px;
+  width: 290px;
